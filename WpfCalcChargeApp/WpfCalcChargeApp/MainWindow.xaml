@@ -1,0 +1,54 @@
+﻿<!--Created by Group #2 on 2016-09-18.
+Assignment #2:
+Create an application that lets the user enter the food charge for a meal at a restaurant. 
+When a button is clicked, the application should calculate and display: 
+	the amount of a 15 percent tip, 
+	7 percent sales tax 
+	and the total of all three amounts.-->
+<Window x:Class="WpfCalcChargeApp.CalcAmount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCalcChargeApp"
+        mc:Ignorable="d"
+        Title="Calculate Amount" Height="550" Width="525" WindowStartupLocation="CenterScreen" MinWidth="525" MinHeight="550">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>            
+        </Grid.RowDefinitions>
+        <TextBox Name="tbFoodPrice" Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="2" Grid.RowSpan="2" Margin="10" Background="Bisque" FontSize="20" Padding="5" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" BorderBrush="Transparent"></TextBox>
+        <TextBlock Name="tblTipAmount" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="5" Grid.RowSpan="2" Margin="10" Background="Bisque" FontSize="20" Padding="5" TextAlignment="Right" Text="{Binding TipVal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Name="tblTaxAmount" Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="7" Grid.RowSpan="2" Margin="10" Background="Bisque" FontSize="20" Padding="5" TextAlignment="Right" Text="{Binding TaxVal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Name="tblTotalAmount" Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="10" Grid.RowSpan="2" Margin="10" Background="Bisque" FontSize="20" Padding="5" TextAlignment="Right" Text="{Binding TotalVal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"/>
+        <Button Name="btnCalculate" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="13" Grid.RowSpan="2" Margin="10" Background="SteelBlue" FontSize="20" FontWeight="Bold" Foreground="White" Content="Calculate" Click="btnCalculate_Click" BorderBrush="Transparent"/>
+        <Label Name="lblFoodPrice" Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="1" Grid.RowSpan="2"  Margin="10,0,0,0" Content="Please Enter Meal Charge:" FontSize="19" FontWeight="Bold" Foreground="SteelBlue"/>
+        <Label Name="lblTipAmount" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" Grid.RowSpan="2" Margin="10,0,0,0" Content="Tip (15%):" FontSize="19" FontWeight="Bold" Foreground="SteelBlue"/>
+        <Label Name="lblTaxAmount" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="7" Grid.RowSpan="2" Margin="10,0,0,0" Content="Sales Tax (7%):" FontSize="19" FontWeight="Bold" Foreground="SteelBlue"/>
+        <Label Name="lblTotalAmount" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="9" Grid.RowSpan="2" Margin="10,0,0,0" Content="Total:" FontSize="19" FontWeight="Bold" Foreground="SteelBlue"/>        
+    </Grid>
+</Window>
